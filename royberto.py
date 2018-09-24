@@ -21,8 +21,7 @@ right = GPIO.PWM(18, 50)
 # instant (no waiting) key response, and use special values for cursor keys
 
 input('Press return to stop:')
-left.start(1)
-right.start(1)
+
 screen = curses.initscr()
 curses.noecho() 
 curses.cbreak()
@@ -75,7 +74,6 @@ finally:
     curses.endwin()
     left.stop()
     right.stop()
-    p.stop()
     GPIO.cleanup()
     
 
